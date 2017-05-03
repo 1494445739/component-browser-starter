@@ -60,7 +60,7 @@ public final class Starter extends HttpServlet {
                     } );
                 } catch ( Exception ex ) {
                     // 启动IE
-                    Runtime.getRuntime().exec( "rundll32 url.dll, FileProtocolHandler "URL );
+                    Runtime.getRuntime().exec( "rundll32 url.dll, FileProtocolHandler " + URL );
                 }
 
             } else {
@@ -75,7 +75,7 @@ public final class Starter extends HttpServlet {
                 };
                 String browser = null;
 
-                for ( int count = 0; count < browsers.length && browser == null; count ) {
+                for ( int count = 0; count < browsers.length && browser == null; count++ ) {
                     if ( Runtime.getRuntime().exec( new String[]{
                             "which",
                             browsers[ count ]
